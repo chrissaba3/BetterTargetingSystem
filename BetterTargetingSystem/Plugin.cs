@@ -141,10 +141,6 @@ public sealed unsafe class Plugin : IDalamudPlugin
             return;
         }
 
-        // Don't allow extra keybinds in PvP
-        if (Client.IsPvPExcludingDen)
-            return;
-
         if (Configuration.LowestHealthTargetKeybind.IsPressed())
         {
             try { KeyState[(int)Configuration.LowestHealthTargetKeybind.Key!] = false; } catch { }
